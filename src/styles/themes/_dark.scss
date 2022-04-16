@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$purple-palette, 200);
+$dark-accent: mat.define-palette(mat.$teal-palette, 200);
+$dark-warn: mat.define-palette(mat.$red-palette);
+
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+}

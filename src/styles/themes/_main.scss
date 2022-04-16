@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$deep-purple-palette);
+$accent: mat.define-palette(mat.$amber-palette);
+
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: $primary,
+   accent: $accent,
+ )
+));
+
+// Apply the light theme by default
+@include mat.core-theme($light-theme);
+@include mat.button-theme($light-theme);
