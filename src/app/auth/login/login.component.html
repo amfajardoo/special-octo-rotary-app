@@ -10,6 +10,7 @@
           type="email"
           placeholder="Email"
           class="email"
+          id="email"
         />
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -20,6 +21,7 @@
           placeholder="Password"
           type="password"
           class="password"
+          id="password"
         />
       </mat-form-field>
 
@@ -28,7 +30,8 @@
         color="primary"
         type="submit"
         class="submit"
-        [disabled]="form.valid"
+        id="login-btn"
+        [disabled]="form.invalid"
       >
         Login
       </button>

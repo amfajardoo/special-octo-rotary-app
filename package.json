@@ -7,7 +7,7 @@
     "build": "ng build --base-href=/special-octo-rotary-app/",
     "audit": "npm audit fix --force",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --code-coverage"
   },
   "private": true,
   "dependencies": {

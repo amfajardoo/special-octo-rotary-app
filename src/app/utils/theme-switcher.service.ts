@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   switchTheme(): void {
     const isDarkTheme = document.body.classList.toggle('dark-theme');
 
     if (!isDarkTheme) {
-      localStorage.setItem('theme', 'light-theme');
+      this.localStorageService.setItem('theme', 'light-theme');
       return;
     }
 
-    localStorage.setItem('theme', 'dark-theme');
+    this.localStorageService.setItem('theme', 'dark-theme');
   }
 }
