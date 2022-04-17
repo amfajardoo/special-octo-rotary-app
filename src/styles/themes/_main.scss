@@ -5,14 +5,14 @@
 
 $primary: mat.define-palette(mat.$deep-purple-palette);
 $accent: mat.define-palette(mat.$amber-palette);
+$warn: mat.define-palette(mat.$red-palette);
 
 $light-theme: mat.define-light-theme((
  color: (
    primary: $primary,
    accent: $accent,
+   warn: $warn,
  )
 ));
 
-// Apply the light theme by default
-@include mat.core-theme($light-theme);
-@include mat.button-theme($light-theme);
+@include mat.all-component-colors($light-theme);

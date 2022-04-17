@@ -1,5 +1,12 @@
+// Themes
 @use "./themes/dark";
 @use "./themes/main";
+// Devices Styles
+@use "./devices/mobile";
+@use "./devices/tablet";
+@use "./devices/desktop";
+// Utils
+@use "./utils/margin";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

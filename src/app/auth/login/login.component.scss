@@ -1,15 +1,8 @@
-// @import "src/styles/core/sizes";
-@use "src/styles/core/sizes" as sizes;
-
 .card {
-  margin: auto;
   display: grid;
-  padding: sizes.$twenty;
-  max-width: sizes.$eightypercentage;
-  margin-top: sizes.$fiftypercentage;
-  box-shadow: 0 sizes.$four sizes.$eight 0 rgba(0, 0, 0, 0.2), 0 sizes.$six sizes.$twenty 0 rgba(0, 0, 0, 0.19);
-  border-radius: sizes.$five;
-  grid-template-areas: "title" "form";
+  grid-template-areas:
+    "title"
+    "form";
 }
 
 .title {
@@ -21,7 +14,10 @@
 .form {
   display: grid;
   grid-area: form;
-  grid-template-areas: "email" "password" "submit";
+  grid-template-areas: 
+    "email"
+    "password"
+    "submit";
 }
 
 .email { grid-area: email; }

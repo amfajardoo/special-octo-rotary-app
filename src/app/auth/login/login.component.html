@@ -1,5 +1,5 @@
-<mat-card class="card">
-  <mat-card-title class="title" color="primary">Login Form</mat-card-title>
+<mat-card class="container card col-3 col-s-7 mt-2">
+  <mat-card-title class="title">Login Form</mat-card-title>
   <mat-card-content>
     <form [formGroup]="form" (submit)="login()" class="form">
       <mat-form-field appearance="outline">
@@ -10,8 +10,7 @@
           type="email"
           placeholder="Email"
           class="email"
-          id="email"
-        />
+          id="email" />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
@@ -21,8 +20,7 @@
           placeholder="Password"
           type="password"
           class="password"
-          id="password"
-        />
+          id="password" />
       </mat-form-field>
 
       <button
@@ -31,8 +29,7 @@
         type="submit"
         class="submit"
         id="login-btn"
-        [disabled]="form.invalid"
-      >
+        [disabled]="form.invalid">
         Login
       </button>
     </form>
