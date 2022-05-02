@@ -95,6 +95,7 @@ jobs:
           path: dist/testing-app
   # This workflow deploy the app on github pages
   deploy:
+    needs: [build, test]
     runs-on: ubuntu-18.04
     steps:
       - uses: JamesIves/github-pages-deploy-action@v4.2.5
