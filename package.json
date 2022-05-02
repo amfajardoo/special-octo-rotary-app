@@ -7,7 +7,8 @@
     "build": "ng build --base-href=/special-octo-rotary-app/",
     "audit": "npm audit fix --force",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --code-coverage",
+    "test": "ng test --watch=false --browsers ChromeHeadless",
+    "test-code-coverage": "ng test --code-coverage",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"
   },
