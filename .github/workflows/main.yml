@@ -98,6 +98,10 @@ jobs:
     needs: [build, test]
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
       - uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
