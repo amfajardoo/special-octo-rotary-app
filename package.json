@@ -10,7 +10,10 @@
     "test": "ng test --watch=false --browsers ChromeHeadless",
     "test-code-coverage": "ng test --code-coverage",
     "lint": "ng lint",
-    "lint:fix": "ng lint --fix"
+    "lint:fix": "ng lint --fix",
+    "compodoc:build": "compodoc -p tsconfig.doc.json --theme material",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s --theme material",
+    "compodoc:serve": "compodoc -s"
   },
   "private": true,
   "dependencies": {
@@ -24,8 +27,11 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@compodoc/compodoc": "^1.1.19",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
+    "yt-player": "^3.5.0",
+    "yt-player-angular": "^5.1.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -37,8 +43,8 @@
     "@angular-eslint/template-parser": "13.2.1",
     "@angular/cli": "~13.1.3",
     "@angular/compiler-cli": "~13.1.0",
+    "@types/events": "^3.0.0",
     "@types/jasmine": "~3.10.0",
-    "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "eslint": "^8.12.0",

@@ -1,0 +1,17 @@
+<p>home works!</p>
+<label for="video-search">Find your song to play</label>
+<input
+  #search
+  id="video-search"
+  type="text"
+  placeholder="Find your song"
+  autofocus
+  (change)="searchVideo(search.value)" />
+
+<ng-container *ngIf="videoList">
+  <div
+    *ngFor="let video of videoList; trackBy: trackByVideoId"
+    class="video-list-container">
+    <app-video-player [video]="video"></app-video-player>
+  </div>
+</ng-container>

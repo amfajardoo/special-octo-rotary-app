@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api/',
+  API_URL: 'http://localhost:3000/api',
+  YT_URL: 'https://www.googleapis.com/youtube/v3',
 };
 
 /*

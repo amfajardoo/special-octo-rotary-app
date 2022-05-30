@@ -95,6 +95,7 @@ jobs:
         run: npm run test
   # This workflow deploy the app on github pages
   deploy:
+    if: ${{ github.event_name == 'push' }}
     needs: [build, test]
     runs-on: ubuntu-18.04
     steps:
