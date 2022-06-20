@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from '@env/environment';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'API_URL',
+      useValue: environment.API_URL
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

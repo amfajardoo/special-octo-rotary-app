@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { YoutubeVideo } from '../../models/youtube';
-import { YoutubeService } from '../../services/youtube.service';
+import { YoutubeVideo } from '@main/models/youtube';
+import { YoutubeService } from '@main/services/youtube.service';
 
 @Component({
   selector: 'app-home',

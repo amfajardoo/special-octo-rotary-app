@@ -23,14 +23,20 @@
       "dom"
     ],
     "paths": {
-      "auth/*": [
-        "app/auth/*"
+      "@auth/*": [
+        "src/app/auth/*"
       ],
-      "utils": [
-        "app/utils/*"
+      "@main/*": [
+        "src/app/main/*"
       ],
-      "styles": [
-        "assets/scss/*"
+      "@utils/*": [
+        "src/app/utils/*"
+      ],
+      "@styles/*": [
+        "src/assets/scss/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
       ],
     }
   },

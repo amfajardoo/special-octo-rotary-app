@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PlayerOptions } from 'yt-player-angular';
-import { YoutubeVideo } from '../../models/youtube';
+import { YoutubeVideo } from '@main/models/youtube';
 
 @Component({
   selector: 'app-video-player',
