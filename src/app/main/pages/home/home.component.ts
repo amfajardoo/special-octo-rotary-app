@@ -11,15 +11,7 @@ import { YoutubeService } from '@main/services/youtube.service';
 export class HomeComponent implements OnDestroy {
   private subs: Subscription = new Subscription();
 
-  videoList: YoutubeVideo[] = [];
-
-  constructor(private ytService: YoutubeService) {}
-
-  searchVideo(videoName: string) {
-    this.ytService.getVideos(videoName).subscribe(data => {
-      this.videoList = data;
-    });
-  }
+  constructor() {}
 
   trackByVideoId(index: number, video: YoutubeVideo): string {
     return video.id.videoId;
