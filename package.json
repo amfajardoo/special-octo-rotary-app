@@ -1,5 +1,5 @@
 {
-  "name": "testing-app",
+  "name": "special-octo-rotary-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -28,6 +28,7 @@
     "@angular/platform-browser-dynamic": "^14.0.2",
     "@angular/router": "^14.0.2",
     "@compodoc/compodoc": "^1.1.19",
+    "@ngrx/component-store": "^14.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "yt-player": "^3.5.0",

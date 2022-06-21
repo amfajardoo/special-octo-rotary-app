@@ -1,0 +1,19 @@
+:host {
+  display: grid;
+  grid-template-areas: "toolbar""content";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 90%;
+  row-gap: 15px;
+  height: 100%;
+  width: 100%;
+}
+
+.toolbar {
+  grid-area: toolbar;
+}
+
+.content {
+  grid-area: content;
+  width: 90%;
+  margin: 0 auto;
+}
