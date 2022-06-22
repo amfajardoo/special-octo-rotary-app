@@ -1,14 +1,7 @@
 <app-video-search></app-video-search>
 
-<ng-container *ngIf="(videos$ | async) as videos">
-  <ng-container *ngIf="videos.length; else noVideosFound">
-    <div
-      *ngFor="let video of videos; trackBy: trackByVideoId"
-      class="video-list-container">
-      <app-video-player [video]="video"></app-video-player>
-    </div>
-
-  </ng-container>
+<ng-container *ngIf="(video$ | async) as video">
+  <app-video-player [video]="video"></app-video-player>
   <ng-template #noVideosFound>
     <app-nothing-to-display></app-nothing-to-display>
   </ng-template>

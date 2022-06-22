@@ -1,3 +1,8 @@
+export interface VideoLyrics {
+  video: YoutubeVideo;
+  lyrics: string;
+}
+
 export interface YoutubeVideo {
   etag: string;
   id: {

@@ -11,13 +11,9 @@ import { VideosState, VideosStore } from '@main/store/video.store';
 })
 export class HomeComponent implements OnDestroy {
   private subs: Subscription = new Subscription();
-  readonly videos$ = this.videosStore.videos$;
+  readonly video$ = this.videosStore.video$;
 
   constructor(private readonly videosStore: VideosStore) {}
-
-  trackByVideoId(index: number, video: YoutubeVideo): string {
-    return video.id.videoId;
-  }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
