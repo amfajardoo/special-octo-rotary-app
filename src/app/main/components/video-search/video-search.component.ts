@@ -16,13 +16,12 @@ import { VideosStore } from '@main/store/video.store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoSearchComponent {
+  searchLabel = 'Type Song name Artist name';
   searchInput = new FormControl<string>('', { nonNullable: true});
 
-  constructor(private readonly videosStore: VideosStore) {
-    this.searchInput.valueChanges.pipe(
-      tap(search => {
-        this.videosStore.updateSearch(search);
-      })
-    )
+  constructor(private readonly videosStore: VideosStore) { }
+
+  valueChanges(value: string) {
+    this.videosStore.updateSearch(value)
   }
 }
