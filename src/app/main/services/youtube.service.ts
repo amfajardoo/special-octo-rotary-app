@@ -5,31 +5,35 @@ import { combineLatest, map, Observable } from 'rxjs';
 
 @Injectable()
 export class YoutubeService {
+  private readonly lyricsApiUrl = 'https://api.lyrics.ovh/v1';
 
-  private readonly lyricsApiUrl = 'https://api.lyrics.ovh/v1'
-
-  constructor(@Inject('API_URL') private apiUrl: string, private http: HttpClient) {}
-
-  getVideo(query: string):Observable<YoutubeResponse> {
-    return this.http
-      .get<YoutubeResponse>(
-        `${this.apiUrl}/youtube/lyrics?query=${query}`
-      );
-  }
-
-  getLyrics(artist: string, title: string): Observable<string> {
-    return this.http.get<string>(`${this.lyricsApiUrl}/${artist}/${title}`)
-  }
+  constructor(
+    @Inject('API_URL') private apiUrl: string,
+    private http: HttpClient
+  ) {}
 
   getVideoLyrics(query: string) {
     const [title, artist] = query.split(' ');
-    return combineLatest([this.getVideo(query), this.getLyrics(artist, title)]).pipe(
+    return combineLatest([
+      this.getVideo(query),
+      this.getLyrics(artist, title),
+    ]).pipe(
       map(([videoResponse, lyrics]) => {
         return {
           video: videoResponse.items[0],
-          lyrics
-        }
+          lyrics,
+        };
       })
-    )
+    );
+  }
+
+  private getVideo(query: string): Observable<YoutubeResponse> {
+    return this.http.get<YoutubeResponse>(
+      `${this.apiUrl}/youtube/videos?query=${query}`
+    );
+  }
+
+  private getLyrics(artist: string, title: string): Observable<string> {
+    return this.http.get<string>(`${this.lyricsApiUrl}/${artist}/${title}`);
   }
 }

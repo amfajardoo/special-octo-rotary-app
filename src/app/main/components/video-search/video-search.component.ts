@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 import { YoutubeService } from '@main/services/youtube.service';
 import { tap } from 'rxjs';
-import { VideosStore } from '@main/store/video.store';
+import { MainState } from '@store/reducers/main.reducer';
+import { Store } from '@ngrx/store';
+import { updateSearch } from '@store/actions/main.actions';
 
 @Component({
   selector: 'app-video-search',
@@ -17,11 +19,11 @@ import { VideosStore } from '@main/store/video.store';
 })
 export class VideoSearchComponent {
   searchLabel = 'Type Song name Artist name';
-  searchInput = new FormControl<string>('', { nonNullable: true});
+  searchInput = new FormControl<string>('', { nonNullable: true });
 
-  constructor(private readonly videosStore: VideosStore) { }
+  constructor(private readonly mainStore: Store<MainState>) {}
 
-  valueChanges(value: string) {
-    this.videosStore.updateSearch(value)
+  valueChanges(search: string) {
+    this.mainStore.dispatch(updateSearch({ search }));
   }
 }

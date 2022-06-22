@@ -38,6 +38,9 @@
       "@env/*": [
         "src/environments/*"
       ],
+      "@store/*": [
+        "src/app/store/*"
+      ]
     }
   },
   "angularCompilerOptions": {

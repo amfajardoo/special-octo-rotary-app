@@ -8,7 +8,7 @@ import { YoutubeVideo } from '@main/models/youtube';
   styleUrls: ['./video-player.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [YtPlayerAngularModule]
+  imports: [YtPlayerAngularModule],
 })
 export class VideoPlayerComponent {
   @Input() video!: YoutubeVideo;

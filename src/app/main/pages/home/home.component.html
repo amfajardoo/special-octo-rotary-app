@@ -1,6 +1,6 @@
 <app-video-search></app-video-search>
 
-<ng-container *ngIf="(video$ | async) as video">
+<ng-container *ngIf="video$ | async as video">
   <app-video-player [video]="video"></app-video-player>
   <ng-template #noVideosFound>
     <app-nothing-to-display></app-nothing-to-display>

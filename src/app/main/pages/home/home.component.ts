@@ -1,21 +1,16 @@
 import { Component, OnDestroy } from '@angular/core';
-import { map, Subscription } from 'rxjs';
-import { YoutubeVideo } from '@main/models/youtube';
-import { VideosState, VideosStore } from '@main/store/video.store';
+import { Store } from '@ngrx/store';
+import { MainState } from '@store/reducers/main.reducer';
+import { selectVideo } from '@store/selectors/main.selectors';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [VideosStore]
 })
-export class HomeComponent implements OnDestroy {
-  private subs: Subscription = new Subscription();
-  readonly video$ = this.videosStore.video$;
+export class HomeComponent {
+  readonly video$ = this.mainStore.select(selectVideo);
 
-  constructor(private readonly videosStore: VideosStore) {}
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
-  }
+  constructor(private readonly mainStore: Store<MainState>) {}
 }
